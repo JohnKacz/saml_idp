@@ -45,7 +45,7 @@ module SamlIdp
             subject.NameID name_id, Format: name_id_format[:name]
             subject.SubjectConfirmation Method: Saml::XML::Namespaces::Methods::BEARER do |confirmation|
               confirmation_hash = {}
-              confirmation_hash[:InResponseTo] = saml_request_id unless saml_request_id.nil?
+              confirmation_hash[:InResponseTo] = saml_request_id unless true
               confirmation_hash[:NotOnOrAfter] = not_on_or_after_subject
               confirmation_hash[:Recipient] = saml_acs_url
 
